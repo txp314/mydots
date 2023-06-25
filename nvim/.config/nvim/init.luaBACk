@@ -1,0 +1,64 @@
+-- let's see how this works
+--
+-- TODOS:
+-- 1. my shortcuts again
+-- 2. minimal statusline
+-- 3. Nerdtree - or alternative
+-- 4. Splits and Stuff shortcuts, evt Plugin
+-- 5. Easymotion
+
+-- 7. setup Flutter dev - see if works better than vscode
+-- 
+local Plug = vim.fn['plug#']
+ 
+vim.call('plug#begin', '~/.config/nvim/plugged')
+--Plug 'hoob3rt/lualine.nvim'
+--Plug 'neomake/neomake'
+--lug 'tpope/vim-fugitive'
+--Plug 'tpope/vim-surround'
+--Plug 'rhysd/accelerated-jk'
+--Plug 'Lokaltog/vim-easymotion'
+--Plug 'vim-airline/vim-airline'
+--Plug 'vim-airline/vim-airline-themes'
+--Plug 'edkolev/tmuxline.vim'
+--Plug 'vim-syntastic/syntastic'
+
+--Plug 'wincent/command-t'
+--Plug 'scrooloose/nerdtree'
+--Plug 'SirVer/ultisnips'
+--Plug 'honza/vim-snippets'
+--Plug 'xolox/vim-misc'
+--Plug 'xolox/vim-easytags'
+--Plug 'flazz/vim-colorschemes'
+
+-- List of plugins goes here
+-- ....
+
+vim.call('plug#end')
+
+-- General settings and autocommands -> auto reload lua.init, mit luafile % ?sdf 
+--vim.api.nvim_exec([[ autocommand goes here ]], false)
+
+
+
+-- Key Mappings
+--                       <mode>  <keys>    <actions>       <options>
+--vim.api.nvim_set_keymap( 'i',   'öw', '<esc>:write<CR>', {noremap = true})
+-- vim.api.nvim_set_keymap( 'i',   'öw', '<C-O>:update<CR><C-O>print("written...")<CR>', {noremap = true})
+
+-- jk: normal mode  
+vim.api.nvim_set_keymap( 'i',   'jk', '<esc>', {noremap = true})
+vim.api.nvim_set_keymap( 'i',   'kj', '<esc>', {noremap = true})
+vim.api.nvim_set_keymap( 'v',   'jk', '<esc>', {noremap = true})
+vim.api.nvim_set_keymap( 'v',   'kj', '<esc>', {noremap = true})
+
+-- öw: save -> TODO silent
+vim.api.nvim_set_keymap( 'n',   'öw', ':update<CR>', {noremap = true})
+vim.api.nvim_set_keymap( 'i',   'öw', '<C-O>:update<CR>', {noremap = true})
+vim.api.nvim_set_keymap( 'v',   'öw', '<C-C>:update<CR>', {noremap = true})
+
+-- insert mode remaps
+
+if vim.fn.has('nvim-0.5') == 1 then
+  print('we got neovim 0.5')
+end
